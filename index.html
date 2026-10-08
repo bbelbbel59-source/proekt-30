@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportZone</title>
+    <link rel="icon" href="images.jpg">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="logo">SPORT<span>ZONE</span></div>
+        <nav>
+            <ul>
+                <li><a href="#home">Bosh sahifa</a></li>
+                <li><a href="#about">Biz haqimizda</a></li>
+                <li><a href="#sports">Sport Turlari</a></li>
+                <li><a href="#workouts">Mashqlar</a></li>
+                <li><a href="#bmi">BMI Kalkulyator</a></li>
+                <li><a href="#contact">Aloqa</a></li>
+            </ul>
+        </nav>
+        <button id="themeToggle" class="theme-btn">🌙 Rejim</button>
+    </header>
+
+    <main class="container">
+        <section id="home" class="page">
+            <div class="hero">
+                <h1 id="heroTitle">SOG'LOM TURMUSH MASHQLARDAN BOSHLANADI</h1>
+                <p id="heroDesc">O'zingizga mos sport turini tanlang va bugun intizomli mashqlarni boshlang!</p>
+                <div class="hero-btns">
+                    <button onclick="changeHeroText()" class="btn active-btn">Matnni O'zgartirish</button>
+                    <a href="#workouts" class="btn outline-btn">Mashqlar</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="page">
+            <h2>Biz Haqimizda</h2>
+            <p>SportZone — sportchilar va sog'lom turmush tarziga intiluvchilar uchun mo'ljallangan interaktiv platforma.</p>
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>15k+</h3>
+                    <p>Foydalanuvchilar</p>
+                </div>
+                <div class="stat-card">
+                    <h3>60+</h3>
+                    <p>Sport Turlari</p>
+                </div>
+                <div class="stat-card">
+                    <h3>120+</h3>
+                    <p>Mashq Rejalari</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="sports" class="page">
+            <h2>Ommabop Sport Turlari</h2>
+            <div class="grid-cards">
+                <div class="card">
+                    <h3>⚽ Futbol</h3>
+                    <p>Jamoaviy va chidamlilikni oshiruvchi eng mashhur sport turi.</p>
+                    <button onclick="filterSport('Futbol')" class="card-btn">Batafsil</button>
+                </div>
+                <div class="card">
+                    <h3>🏀 Basketbol</h3>
+                    <p>Tezkorlik, sakrash va jismoniy chaqqonlikni shakllantiruvchi o'yin.</p>
+                    <button onclick="filterSport('Basketbol')" class="card-btn">Batafsil</button>
+                </div>
+                <div class="card">
+                    <h3>🥊 Boks</h3>
+                    <p>Kuch, reaksiya va irodani oshiruvchi yakka tartibdagi sport.</p>
+                    <button onclick="filterSport('Boks')" class="card-btn">Batafsil</button>
+                </div>
+            </div>
+            <p id="selectedSportText" class="info-text"></p>
+        </section>
+
+        <section id="workouts" class="page">
+            <h2>Kunlik Mashq Rejasi</h2>
+            <div class="workout-box">
+                <h3 id="workoutName">Turnikda tortilish</h3>
+                <p id="workoutDetail">Orqa va qo'l mushaklarini rivojlantirish uchun 3 setdan 10 martadan.</p>
+                <button onclick="nextWorkout()" class="btn active-btn">Keyingi Mashq</button>
+            </div>
+        </section>
+
+        <section id="bmi" class="page">
+            <h2>BMI (Tana Massasi Indeksi) Kalkulyatori</h2>
+            <div class="bmi-form">
+                <input type="number" id="weight" placeholder="Vazn (kg)">
+                <input type="number" id="height" placeholder="Bo'y (cm)">
+                <button onclick="calculateBMI()" class="btn active-btn">Hisoblash</button>
+                <div id="bmiResult" class="result-box"></div>
+            </div>
+        </section>
+
+        <section id="contact" class="page">
+            <h2>Biz Bilan Bog'laning</h2>
+            <form onsubmit="handleContact(event)" class="contact-form">
+                <input type="text" placeholder="Ismingiz" required>
+                <input type="email" placeholder="Emailingiz" required>
+                <textarea placeholder="Xabaringiz" rows="3" required></textarea>
+                <button type="submit" class="btn active-btn">Yuborish</button>
+            </form>
+            <p id="contactStatus" class="info-text"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
